@@ -1,6 +1,14 @@
 const arr = [1, 2, 3, 4, 5, 6];
 
 //Calls
-arr.myForEach((item, index, self) => {
-  console.log(item, index, self);
+//forEach
+// arr.myForEach((item, index, self) => {
+//   console.log(item, index, self);
+// });
+
+//map
+const mapo = arr.myMap((item, index, self) => {
+  return item * 2;
 });
+
+console.log(mapo);
