@@ -8,7 +8,9 @@ const arr = [1, 2, 3, 4, 5, 6];
 
 //map
 const mapo = arr.myMap((item, index, self) => {
-  return item * 2;
+    if(index <= 2){
+        return item * 2;
+    }
 });
 
 console.log(mapo);

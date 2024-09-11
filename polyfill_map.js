@@ -6,7 +6,7 @@ Array.prototype.myMap = function (callback) {
   const temp = [];
   for (let i = 0; i < arr.length; i++) {
     let ret = callback(arr[i], i, arr);
-    temp.push(ret);
+    if (ret) temp.push(ret); //avoid returning undefined values
   }
   return temp;
 };
