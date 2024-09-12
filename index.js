@@ -26,7 +26,13 @@ const arr = [1, 2, 3, 4, 5, 6];
 // console.log(filtero);
 
 //find
-const findo = arr.myFind((item, index, self) => {
-  return item > 6;
+// const findo = arr.myFind((item, index, self) => {
+//   return item > 6;
+// });
+// console.log(findo);
+
+//some
+const someo = arr.mySome((item, index, self) => {
+  return item === 5;
 });
-console.log(findo);
+console.log(someo);
