@@ -38,7 +38,13 @@ const arr = [1, 2, 3, 4, 5, 6];
 // console.log(someo);
 
 //every - returns true if all the items in the array satisfy the given condition
-const everyo = arr.myEvery((item, index, self) => {
-  return item < 9;
-});
-console.log(everyo);
+// const everyo = arr.myEvery((item, index, self) => {
+//   return item < 9;
+// });
+// console.log(everyo);
+
+//reduce - returns only single value after accomodating all array items
+const reduceo = arr.myReduce((accumulator, currentValue) => {
+  return accumulator * currentValue;
+}, 1);
+console.log(reduceo);
