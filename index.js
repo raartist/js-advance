@@ -44,7 +44,18 @@ const arr = [1, 2, 3, 4, 5, 6];
 // console.log(everyo);
 
 //reduce - returns only single value after accomodating all array items
-const reduceo = arr.myReduce((accumulator, currentValue) => {
-  return accumulator * currentValue;
-}, 1);
-console.log(reduceo);
+// const reduceo = arr.myReduce((accumulator, currentValue) => {
+//   return accumulator * currentValue;
+// }, 1);
+// console.log(reduceo);
+
+let p1 = { name: "Rishabh", age: 33 };
+let p2 = { name: "Kapil", age: 55 };
+function greet(bool){
+    console.log(`Hello ${this.name}! your age is ${this.age}. ${bool}`);
+}
+//function prototype
+//call - calls a function with the given reference
+
+greet.myCall(p2,false)
+
