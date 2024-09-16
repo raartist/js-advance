@@ -51,7 +51,7 @@ const arr = [1, 2, 3, 4, 5, 6];
 
 let p1 = { name: "Rishabh", age: 33 };
 let p2 = { name: "Kapil", age: 55 };
-function greet(active,city) {
+function greet(active, city) {
   console.log(`Hello ${this.name}! your age is ${this.age}. ${active} ${city}`);
 }
 //function prototype
@@ -59,4 +59,8 @@ function greet(active,city) {
 // greet.myCall(p2, false);
 
 //apply - calls a function with the given reference with an array of args
-greet.myApply(p2, [true,"Delhi"]);
+// greet.myApply(p2, [true,"Delhi"]);
+
+//bind - calls a function with the given reference with comma saperated args and can be stored in a variable
+const bindCall = greet.myBind(p2, true);
+bindCall("Delhi");
