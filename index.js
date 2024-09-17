@@ -62,5 +62,39 @@ function greet(active, city) {
 // greet.myApply(p2, [true,"Delhi"]);
 
 //bind - calls a function with the given reference with comma saperated args and can be stored in a variable
-const bindCall = greet.myBind(p2, true);
-bindCall("Delhi");
+// const bindCall = greet.myBind(p2, true);
+// bindCall("Delhi");
+
+// +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+
+// Polyfills for promise functions
+
+const t1 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("t1 success");
+    }, 500);
+  });
+};
+
+const t2 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("t2 failed");
+    }, 500);
+  });
+};
+
+const t3 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("t3 success");
+    }, 500);
+  });
+};
+
+Promise.myAll([t1(), t3()]) //pass multiple promises as an array
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+
+  //if any promise gets rejected - promise.all returns error
