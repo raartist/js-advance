@@ -88,7 +88,7 @@ const t2 = () => {
 const t3 = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve("t3 success");
+      reject("t3 success");
     }, 900);
   });
 };
@@ -100,6 +100,15 @@ const t3 = () => {
 //   .catch((err) => console.log(err));
 //if any promise gets rejected - promise.all returns error
 
-Promise.myAllSettled([t1(),t2(), t3()])
+// Promise.allSetttled
+// Promise.myAllSettled([t1(), t2(), t3()])
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err));
+
+//returns all promise responses with status - fulfilled or rejected, on resolving or rejection
+
+// Promise.any
+Promise.myAny([ t2(), t3()])
   .then((res) => console.log(res))
   .catch((err) => console.log(err));
+  //return anyone promise which is fulfilled, otherwise throws error that no promise was successful.
