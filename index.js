@@ -81,7 +81,7 @@ const t2 = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       reject("t2 failed");
-    }, 500);
+    }, 1000);
   });
 };
 
@@ -89,12 +89,17 @@ const t3 = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("t3 success");
-    }, 500);
+    }, 900);
   });
 };
 
-Promise.myAll([t1(), t3()]) //pass multiple promises as an array
+// Promise.all
+//pass multiple promises as an array
+// Promise.myAll([t1(), t3()])
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err));
+//if any promise gets rejected - promise.all returns error
+
+Promise.myAllSettled([t1(),t2(), t3()])
   .then((res) => console.log(res))
   .catch((err) => console.log(err));
-
-  //if any promise gets rejected - promise.all returns error
