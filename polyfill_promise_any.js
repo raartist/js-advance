@@ -6,7 +6,7 @@ Promise.myAny = function (promises) {
     const len = promises.length;
     const errors = [];
     if (len === 0) {
-      return resolve({ status: "fulfilled", value: "" });
+      return reject({ message: "Empty array passed!", errors });
     }
 
     promises.forEach(async (promise, index) => {
