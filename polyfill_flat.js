@@ -13,3 +13,20 @@ Array.prototype.myFlat = function () {
   flat(arr);
   return finalArr;
 };
+
+//iterative way
+
+// Array.prototype.myFlat = function () {
+//   const stack = [...this];
+//   const result = [];
+
+//   while (stack.length) {
+//     let ele = stack.pop();
+//     if (Array.isArray(ele)) {
+//       stack.push(...ele);
+//     } else {
+//       result.push(ele);
+//     }
+//   }
+//   return result.reverse();
+// };
