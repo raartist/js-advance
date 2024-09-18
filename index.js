@@ -108,7 +108,13 @@ const t3 = () => {
 //returns all promise responses with status - fulfilled or rejected, on resolving or rejection
 
 // Promise.any
-Promise.myAny([ t2(), t3()])
+// Promise.myAny([ t2(), t3()])
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err));
+//return anyone promise which is fulfilled, otherwise throws error that no promise was successful.
+
+//Promise.race
+Promise.myRace([t2(), t3()])
   .then((res) => console.log(res))
   .catch((err) => console.log(err));
-  //return anyone promise which is fulfilled, otherwise throws error that no promise was successful.
+//returns any one promise which is completed executing first - (either fulfilled or failed)
