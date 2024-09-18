@@ -114,7 +114,12 @@ const t3 = () => {
 //return anyone promise which is fulfilled, otherwise throws error that no promise was successful.
 
 //Promise.race
-Promise.myRace([t2(), t3()])
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
+// Promise.myRace([t2(), t3()])
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err));
 //returns any one promise which is completed executing first - (either fulfilled or failed)
+
+const arr2 = [0, 1, [2, 3, [5, 6, [7, 8]]]];
+
+// Array.flat
+console.log(arr2.myFlat());
