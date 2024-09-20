@@ -122,4 +122,12 @@ const t3 = () => {
 const arr2 = [0, 1, [2, 3, [5, 6, [7, 8]]]];
 
 // Array.flat
-console.log(arr2.myFlat());
+// console.log(arr2.myFlat());
+
+const a = [1, 2];
+const b = [3, 4];
+const c = [5, 6, [7, 8]];
+const d = "hello";
+const e = function() {};
+
+console.log(a.myConcat(b,c,d,e));
